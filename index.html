@@ -122,11 +122,11 @@ I am interested in algorithm development, parallel and distributed programming, 
 make it computationally demanding. As modern scientific applications increasingly rely on GPU acceleration, balancing numerical accuracy and performance
 has become a key challenge. To address this, we present a GPU-accelerated mixed-precision MCI framework that adaptively selects precision based on local
 numerical behavior using heuristics derived from gradient, variance, and average value analysis. Two precision allocation strategies are explored: term-wise and
-region-wise, both implemented with CUDA batch processing to maximize GPU efficiency. 
+region-wise, both implemented with CUDA batch processing to maximize GPU efficiency. Experimental results on representative test functions of varying dimensionality demonstrate speedups of up to 4.9× compared to full double precision,
+while maintaining controlled relative error.
 		<a onclick="return toggleMe('mci1')">More</a>
 <div id="mci1" style="display:none">	
-	Experimental results on representative test functions of varying dimensionality demonstrate speedups of up to 4.9× compared to full double precision,
-while maintaining controlled relative error. The proposed framework achieves a practical balance between computational efficiency and numerical reliability. It
+	 The proposed framework achieves a practical balance between computational efficiency and numerical reliability. It
 allows integration tasks on GPUs to run accurately and to adapt their precision automatically for higher performance.	
 	</div>
  <br>               
@@ -151,10 +151,13 @@ allows integration tasks on GPUs to run accurately and to adapt their precision 
 			For solving such systems, Krylov and multigrid methods are the predominant iterative approaches, while the block Cimmino (BC) method offers a hybrid, 
 			projection-based alternative with strong parallel efficiency and direct-solver robustness. Existing studies have predominantly focused on 
 			improving the iterative aspects of BC, while its direct solution is relatively neglected. 
-			This study addresses this gap by proposing a block low-rank (BLR) compression–based approach to accelerate the direct solution of BC.			
+			This study addresses this gap by proposing a block low-rank (BLR) compression–based approach to accelerate the direct solution of BC. 
+			In BC, block solutions are often computed with higher precision than needed, leading to unnecessary computational effort.	
+			By employing the BLR technique, we reduce parallel time and the memory consumption required for the factorization and solution of blocks,
+	while preserving its convergence properties.		
 		<a onclick="return toggleMe('blr1')">More</a>
 <div id="blr1" style="display:none">	
-	 In BC, block solutions are often computed with higher precision than needed, leading to unnecessary computational effort. By employing the BLR technique, we reduce parallel time and the memory consumption required for the factorization and solution of blocks, while preserving its convergence properties. In addition, we extend this approach to the augmented block Cimmino method, a pseudo-direct variant of BC. Experiments confirm significant reductions in solution time and resource use. Since BLR compression introduces a trade-off between efficiency and accuracy, we further present a machine learning framework for automatic BLR threshold tuning, using classification and regression models. 
+	  In addition, we extend this approach to the augmented block Cimmino method, a pseudo-direct variant of BC. Experiments confirm significant reductions in solution time and resource use. Since BLR compression introduces a trade-off between efficiency and accuracy, we further present a machine learning framework for automatic BLR threshold tuning, using classification and regression models. 
 		By combining BLR compression with data-driven threshold tuning, this study provides a new and successful approach for improving parallel hybrid solvers.
 	</div>
  <br>               
@@ -178,10 +181,9 @@ allows integration tasks on GPUs to run accurately and to adapt their precision 
 			This study investigates the practical applications of quantum machine learning by comparing the performance of classical Support Vector Machines (SVM) and 
 			Quantum Support Vector Machines (QSVM) across three simulation-based quantum computing platforms: Qiskit, Cirq, and Pennylane. 
 			Through experiments conducted on various datasets, the study examines the influence of different feature mapping
-			techniques—ZFeatureMap, 		
+			techniques—ZFeatureMap, 	 ZZFeatureMap, and Pauli-FeatureMap—on the encoding of data into quantum states within QSVM models. 	
 		<a onclick="return toggleMe('quantum1')">More</a>
 <div id="quantum1" style="display:none">	
- ZZFeatureMap, and Pauli-FeatureMap—on the encoding of data into quantum states within QSVM models. 
 	The results demonstrate that both the choice of computational environment and the feature mapping strategy play a crucial role in
 			determining the performance of quantum machine learning applications.
 			The findings underscore the potential advantages of quantum-based approaches for tackling complex computational problems.
@@ -209,11 +211,11 @@ allows integration tasks on GPUs to run accurately and to adapt their precision 
 			and validating algorithms in scientific computing, artificial intelligence and other data-intensive applications. 
 			Existing approaches such as random matrix generators or general data augmentation methods often fail to produce structurally realistic matrices. 
 			To address this gap, we present MatGen which a tool for generating realistic variations of a given sparse matrix using signal processing and image processing techniques. 
-			MatGen takes a real sparse matrix as input and produces structurally consistent matrices at different sizes, introducing controlled 	
+			MatGen takes a real sparse matrix as input and produces structurally consistent matrices at different sizes, introducing controlled variation while preserving key sparsity patterns	
 		<a onclick="return toggleMe('matgen1')">More</a>
 <div id="matgen1" style="display:none">	
 
-			variation while preserving key sparsity patterns. We evaluate the effectiveness of MatGen by analyzing structural features and visual similarities 
+			. We evaluate the effectiveness of MatGen by analyzing structural features and visual similarities 
 			between original and generated matrices. Experimental results show that MatGen can produce realistic,
 			scalable sparse matrices suitable for a wide range of applications including benchmarking computational methods, and sparse data techniques.
 	</div>
