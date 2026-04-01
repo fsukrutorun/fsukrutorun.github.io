@@ -115,6 +115,34 @@ I am interested in algorithm development, parallel and distributed programming, 
 <table>
 	<tr>
       <td>
+        <h1>Improving parallel hybrid solvers through block low-rank compression and adaptive threshold selection </h1>
+        <p><h3b><i>  F. Sukru Torun  </i> </h3b>
+          <br/><h3c>PeerJ Computer Science, 2026, 
+<a href="https://peerj.com/articles/cs-3680/"> https://peerj.com/articles/cs-3680/ </a> <br/></h3c>
+		
+        </p>	
+        <div id="blr">     
+	Sparse linear systems play an important role in scientific computing and large-scale simulations. 
+			They often become the main computational bottleneck. 
+			For solving such systems, Krylov and multigrid methods are the predominant iterative approaches, while the block Cimmino (BC) method offers a hybrid, 
+			projection-based alternative with strong parallel efficiency and direct-solver robustness. Existing studies have predominantly focused on 
+			improving the iterative aspects of BC, while its direct solution is relatively neglected. 
+			This study addresses this gap by proposing a block low-rank (BLR) compression–based approach to accelerate the direct solution of BC.			
+		<a onclick="return toggleMe('blr1')">More</a>
+<div id="blr1" style="display:none">	
+	 In BC, block solutions are often computed with higher precision than needed, leading to unnecessary computational effort. By employing the BLR technique, we reduce parallel time and the memory consumption required for the factorization and solution of blocks, while preserving its convergence properties. In addition, we extend this approach to the augmented block Cimmino method, a pseudo-direct variant of BC. Experiments confirm significant reductions in solution time and resource use. Since BLR compression introduces a trade-off between efficiency and accuracy, we further present a machine learning framework for automatic BLR threshold tuning, using classification and regression models. 
+		By combining BLR compression with data-driven threshold tuning, this study provides a new and successful approach for improving parallel hybrid solvers.
+	</div>
+ <br>               
+        <br/>
+        <p></p>
+        </div>  
+    </td>
+    <td><img src="blr1.png" alt="block low rank" style="float:left; margin-bottom:10px" width="250"/>    
+    </td>
+  </tr>
+	<tr>
+      <td>
         <h1> A distributed memory parallel randomized Kaczmarz for sparse system of equations </h1>
         <p><h3b><i> Ercan Bölükbaşı, F. Sukru Torun, Murat Manguoğlu </i> </h3b>
           <br/><h3c>Concurrency and Computation: Practice and Experience, 2024, 
