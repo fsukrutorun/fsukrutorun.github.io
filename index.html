@@ -27,11 +27,9 @@ function switchTo(a){
   var e=document.getElementById(a);
   if(!e)return true;
   document.getElementById("publications").style.display="none";
-  document.getElementById("projects").style.display="none";
-  document.getElementById("schedule").style.display="none";
+  document.getElementById("projects").style.display="none";  
   document.getElementById("publications_button").style.fontWeight="normal";
   document.getElementById("projects_button").style.fontWeight="normal";
-  document.getElementById("schedule_button").style.fontWeight="normal";
   e.style.display="block";
   document.getElementById(a.concat("_button")).style.fontWeight="bold";
   return true;
@@ -104,10 +102,7 @@ I am interested in algorithm development, parallel and distributed programming, 
     </td>
     <td width="20%">       
       <div id="teaching_button" class="button" ><span style="font-style: italic;"></span><em></em> <a href="#teaching"> Teaching </a> </div>
-    </td>
-    <td width="20%">
-      <div id="schedule_button" class="button" ><span style="font-style: italic;"></span><em></em> <a href="#schedule"> Schedule </a> </div>
-    </td>
+    </td>    
   </tr>
 </table>
 	
@@ -805,16 +800,7 @@ and then a fully integrated solution was developed that can be used in the aviat
 
 <hr>
 <hr>
-<div id="schedule">
-   <h3d> Schedule: </h3d>
-   </br>
-   </br>
-  <iframe src="https://www.google.com/calendar/embed?src=fsukrutorun%40gmail.com&ctz=Europe/Istanbul" style="border: 0" width="850" height="600" frameborder="0" scrolling="no"></iframe>
-</div>
-
-<hr>
-<hr>
-<div id="schedule">
+<div id="map">
 <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=m&d=DKZvCp6a4YPzSarUg9o4L8DRVIndXj1vq35_Us-cAcI&co=2d78ad&ct=ffffff&cmo=3acc3a&cmn=ff5353'></script>
 </div>
 </div>
