@@ -116,33 +116,7 @@ I am interested in algorithm development, parallel and distributed programming, 
 	
 <div id="publications" style="display:block">
 <table>
-	<tr>
-      <td>
-        <h1>Adaptive Mixed-Precision Monte Carlo Integration on GPUs </h1>
-        <p><h3b><i> Ferhat Onur Özgan, Berke Kabasakal, F. Sukru Torun  </i> </h3b>
-          <br/><h3c> Computing Journal, 2026 
-		
-        </p>	
-        <div id="mci">     
-	Monte Carlo integration (MCI) is widely used for evaluating high-dimensional or non-analytic functions, but its large number of function evaluations can
-make it computationally demanding. As modern scientific applications increasingly rely on GPU acceleration, balancing numerical accuracy and performance
-has become a key challenge. To address this, we present a GPU-accelerated mixed-precision MCI framework that adaptively selects precision based on local
-numerical behavior using heuristics derived from gradient, variance, and average value analysis. Two precision allocation strategies are explored: term-wise and
-region-wise, both implemented with CUDA batch processing to maximize GPU efficiency. Experimental results on representative test functions of varying dimensionality demonstrate speedups of up to 4.9× compared to full double precision,
-while maintaining controlled relative error.
-		<a onclick="return toggleMe('mci1')">More</a>
-<div id="mci1" style="display:none">	
-	 The proposed framework achieves a practical balance between computational efficiency and numerical reliability. It
-allows integration tasks on GPUs to run accurately and to adapt their precision automatically for higher performance.	
-	</div>
- <br>               
-        <br/>
-        <p></p>
-        </div>  
-    </td>
-    <td><img src="mixed1.png" alt="Mixed precision MCI" style="float:left; margin-bottom:10px" width="250"/>    
-    </td>
-  </tr>
+	
 	<tr>
       <td>
         <h1>Improving parallel hybrid solvers through block low-rank compression and adaptive threshold selection </h1>
