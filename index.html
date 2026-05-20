@@ -468,29 +468,47 @@ method implements a block Cimmino iterative scheme, accelerated with
 a stabilized block conjugate gradient algorithm.  An augmented pseudodirect variant has also been developed to overcome convergence issues.
 <a onclick="return toggleMe('underabs')">More</a>
 <div id="underabs" style="display:none">
-Both methods are included in the ABCD solver with a hybrid parallelization
-scheme. The parallel performance of the ABCD Solver is improved
-in the first non-beta release, version 1.0, which we present in this
-paper. Novel algorithms for the distribution of partitions to processes
-are introduced to minimize communication as well as to balance the
-workload. Furthermore, the master-slave approach on each subsystem
-is also improved in order to achieve higher scalability through run-time
-placement of processes. We illustrate the improved parallel scalability
-of the ABCD Solver on a distributed memory architecture by solving
-several problems from the SuiteSparse Matrix Collection.
+Both methods are included in the ABCD solver with a hybrid parallelization scheme. The parallel performance of the ABCD Solver is improved in the first non-beta release, version 1.0, which we present in this paper. Novel algorithms for the distribution of partitions to processes
+are introduced to minimize communication as well as to balance the workload. Furthermore, the master-slave approach on each subsystem is also improved in order to achieve higher scalability through run-time placement of processes. We illustrate the improved parallel scalability
+of the ABCD Solver on a distributed memory architecture by solving several problems from the SuiteSparse Matrix Collection.
  </div>
  <br>
- 		  <a href="https://dblp.org/db/conf/parco/parco2019.html">Conference Program</a>
-		  <br/>        
-         
-        <br/>
-        <p></p>
-        </div>  
+	  <a href="https://dblp.org/db/conf/parco/parco2019.html">Conference Program</a>
+  <br/>        
+        
+  <br/>
+  <p></p>
+</div>  
     </td>
     <td><img src="web1.png" alt="Placement of Slaves" style="float:left; margin-bottom:10px" width="250"/>    
     </td>
   </tr>
 
+
+	  <tr>
+      <td>
+        <h1>A Novel Partitioning Method for Accelerating the Block Cimmino Algorithm </h1>
+        <p><h3b><i>F. Sukru Torun, Murat Manguoglu, Cevdet Aykanat</i> </h3b>
+          <br/><h3c>SIAM Journal on Scientific Computing (SISC), 40(6), C827–C850. (December 2018) </h3c>
+        </p>
+        <div id="simax">
+        We propose a novel block-row partitioning method in order to improve the convergence rate of the block Cimmino algorithm for solving general sparse linear systems of equations. 
+        The convergence rate of the block Cimmino algorithm depends on the orthogonality among the block rows obtained by the partitioning method. 
+        The proposed method takes numerical orthogonality among block rows into account by proposing a row inner-product graph model of the coefficient matrix. 
+        <a onclick="return toggleMe('cimm')">More</a>
+<div id="cimm" style="display:none">
+	In the graph partitioning formulation defined on this graph model, the partitioning objective of minimizing the cutsize directly corresponds to minimizing the sum of inter-block inner products between block rows thus leading to an improvement in the eigenvalue spectrum of the iteration matrix. This in turn leads to a significant reduction in the number of iterations required for convergence. 
+        Extensive experiments conducted on a large set of matrices confirm the validity of the proposed method against a state-of-the-art method.
+        <a href="https://epubs.siam.org/doi/10.1137/18M1166407">Paper</a> 
+ </div>
+        <br/>
+        <p></p>
+        </div>  
+    </td>
+    <td><img src="simax1.png" alt="Block Cimmino" style="float:left; margin-bottom:10px" width="250"/>    
+    </td>
+  </tr>
+	
   <tr>
       <td>
         <h1>Parallel Minimum Norm Solution of Sparse Block Diagonal Column Overlapped Underdetermined Systems</h1>
@@ -505,21 +523,14 @@ several problems from the SuiteSparse Matrix Collection.
         </p>	
         <div id="Underdetermined">
         Underdetermined systems of equations in which the minimum norm solution needs to be 
-computed arise in many applications, such as geophysics, signal processing, and 
-biomedical engineering. In this article, we introduce a new parallel algorithm for 
-obtaining the minimum 2-norm solution of an underdetermined system of equations. 
-The proposed algorithm is based on the Balance scheme, which was originally developed 
-for the parallel solution of banded linear systems.
-	The proposed scheme assumes a 
-generalized banded form where the coefficient matrix has column overlapped block 
-structure in which the blocks could be dense or sparse.
+computed arise in many applications, such as geophysics, signal processing, and  biomedical engineering. In this article, we introduce a new parallel algorithm for 
+obtaining the minimum 2-norm solution of an underdetermined system of equations.  The proposed algorithm is based on the Balance scheme, which was originally developed 
+for the parallel solution of banded linear systems. 	The proposed scheme assumes a  generalized banded form where the coefficient matrix has column overlapped block 
+structure in which the blocks could be dense or sparse.In this article, we implement  the more general sparse case. The blocks can be handled independently by any existing 
+ sequential or parallel QR factorization library.
 <a onclick="return toggleMe('underabs')">More</a>
-<div id="underabs" style="display:none">In this article, we implement
- the more general sparse case. The blocks can be handled independently by any existing 
- sequential or parallel QR factorization library. A smaller reduced system is formed 
- and solved before obtaining the minimum norm solution of the original system in 
- parallel. We experimentally compare and confirm the error bound of the proposed 
- method against the QR factorization based techniques by using true single-precision
+<div id="underabs" style="display:none"> A smaller reduced system is formed   and solved before obtaining the minimum norm solution of the original system in 
+ parallel. We experimentally compare and confirm the error bound of the proposed   method against the QR factorization based techniques by using true single-precision
   arithmetic. We implement the proposed algorithm by using the message passing paradigm.
    We demonstrate numerical effectiveness as well as parallel scalability of the 
    proposed algorithm on both shared and distributed memory architectures for
@@ -557,29 +568,7 @@ structure in which the blocks could be dense or sparse.
 		</p>
     </td>
   </tr>
-  <tr>
-      <td>
-        <h1>A Novel Partitioning Method for Accelerating the Block Cimmino Algorithm </h1>
-        <p><h3b><i>F. Sukru Torun, Murat Manguoglu, Cevdet Aykanat</i> </h3b>
-          <br/><h3c>SIAM Journal on Scientific Computing (SISC), 40(6), C827–C850. (December 2018) </h3c>
-        </p>
-        <div id="simax">
-        We propose a novel block-row partitioning method in order to improve the convergence rate of the block Cimmino algorithm for solving general sparse linear systems of equations. 
-        The convergence rate of the block Cimmino algorithm depends on the orthogonality among the block rows obtained by the partitioning method. 
-        The proposed method takes numerical orthogonality among block rows into account by proposing a row inner-product graph model of the coefficient matrix. 
-        <a onclick="return toggleMe('cimm')">More</a>
-<div id="cimm" style="display:none">
-	In the graph partitioning formulation defined on this graph model, the partitioning objective of minimizing the cutsize directly corresponds to minimizing the sum of inter-block inner products between block rows thus leading to an improvement in the eigenvalue spectrum of the iteration matrix. This in turn leads to a significant reduction in the number of iterations required for convergence. 
-        Extensive experiments conducted on a large set of matrices confirm the validity of the proposed method against a state-of-the-art method.
-        <a href="https://epubs.siam.org/doi/10.1137/18M1166407">Paper</a> 
- </div>
-        <br/>
-        <p></p>
-        </div>  
-    </td>
-    <td><img src="simax1.png" alt="Block Cimmino" style="float:left; margin-bottom:10px" width="250"/>    
-    </td>
-  </tr>
+
 
 
  <tr>
